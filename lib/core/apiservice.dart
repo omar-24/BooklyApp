@@ -8,15 +8,9 @@ class Apiservice{
   var BaseURL="https://www.googleapis.com/books/v1/";
   Apiservice(this.dio);
 
-  get({required String method})async{
+  Future<Map<String,dynamic>>get({required String method})async{
     var response =await dio.get("$BaseURL$method");
-    List<dynamic> Books = response.data;
+    return response.data;
 
-   // List<Books> BOOKS=[];
-    for(Map i in Books){
-
-      //BOOKS.add(Books.fromjson(i));
-    }
-    //return BOOKS;
   }
 }
