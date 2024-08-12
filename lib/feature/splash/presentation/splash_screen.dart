@@ -1,3 +1,5 @@
+import 'package:booklyapp/feature/home/data/models/books.dart';
+import 'package:booklyapp/feature/home/presentation/book_screen.dart';
 import 'package:booklyapp/feature/home/presentation/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +20,7 @@ class _splashscreenState extends State<splashscreen> with SingleTickerProviderSt
   @override
   void initState() {
     Future.delayed(Duration(seconds: 4),(){
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> homeScreen()));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> HomeScreen()));
     });
     // TODO: implement initState
     super.initState();

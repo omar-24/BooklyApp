@@ -18,7 +18,7 @@ class ImageLinks {
   factory ImageLinks.fromJson(Map<String, dynamic> json){
     return ImageLinks(
       smallThumbnail: json["smallThumbnail"],
-      thumbnail: json["thumbnail"],
+      thumbnail: json["thumbnail"] as String?,
       small: json["small"],
       medium: json["medium"],
       large: json["large"],

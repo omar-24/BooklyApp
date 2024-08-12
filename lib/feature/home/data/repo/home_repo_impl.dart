@@ -12,7 +12,7 @@ class HomeRepoImpl implements Home_repo{
   @override
   Future<Either<faliure,List<Books>>> featchNewestBooks()async {
     try {
-      var data =await apiservice.get(method: "volumes?Filtering=free-ebooks&q=subject:");
+      var data =await apiservice.get(method: "v1/volumes?Filtering=free-ebooks&q=subject:&Sorting=newest");
       List<Books> BOOKS=[];
       for(var i in data["items"]){
         BOOKS.add(Books.fromJson(i));
@@ -25,9 +25,9 @@ class HomeRepoImpl implements Home_repo{
   }
 
   @override
-  Future<Either<faliure, List<Books>>> featchallBokks()async {
+  Future<Either<faliure, List<Books>>> featchallBooks()async {
     try {
-      var data =await apiservice.get(method: "volumes?Filtering=free-ebooks&q=subject:&Sorting=newest");
+      var data =await apiservice.get(method: "v1/volumes?Filtering=free-ebooks&q=subject:");
       List<Books> BOOKS=[];
       for(var i in data["items"]){
         BOOKS.add(Books.fromJson(i));
